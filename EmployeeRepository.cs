@@ -18,9 +18,15 @@ namespace MVD_DEMO.net6
             return _conn.Query<Employee>("SELECT * FROM employees;");
         }
 
-        public Employee GetEmployee(int id)
+        public Employee GetEmployee(int employeeid)
         {
-            return _conn.QuerySingle<Employee>("SELECT * FROM EMPLOYEES WHERE EMPLOYEEID= @id", new { id });
+            return _conn.QuerySingle<Employee>("SELECT * FROM EMPLOYEES WHERE EMPLOYEEID= @employeeid", new { employeeid });
+        }
+
+        public void UpdateEmployee(Employee employee)
+        {
+            _conn.Execute("UPDATE employees SET FirstName = @firstname, LastName = @lastname , EmailAddress = @emailaddress, PhoneNumber= @number WHERE EmployeeID = @id",
+             new { firstname = employee.FirstName, lastname = employee.LastName, emailaddress = employee.EmailAddress, number = employee.PhoneNumber, id = employee.EmployeeID });
         }
 
 

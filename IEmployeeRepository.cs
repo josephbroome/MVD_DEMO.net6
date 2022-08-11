@@ -7,7 +7,11 @@ namespace MVD_DEMO.net6
         IEnumerable<Employee> GetAllEmployees();
 
 
-        public Employee GetEmployee(int id);
+        public Employee GetEmployee(int employeeid);
+
+        public void UpdateEmployee(Employee employee);
+
+
     }
 
     

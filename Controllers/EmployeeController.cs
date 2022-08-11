@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using MVD_DEMO.net6.Models;
 
 namespace MVD_DEMO.net6.Controllers
 {
@@ -21,6 +22,23 @@ namespace MVD_DEMO.net6.Controllers
         {
             var employee = _repo.GetEmployee(id);
             return View(employee);
+        }
+
+        public IActionResult UpdateEmployee(int id)
+        {
+            Employee employ = _repo.GetEmployee(id);
+            if (employ == null)
+            {
+                return View("ProductNotFound");
+            }
+            return View(employ);
+        }
+
+        public IActionResult UpdateEmployeeToDatabase(Employee employee)
+        {
+            _repo.UpdateEmployee(employee);
+
+            return RedirectToAction("ViewEmployee", new { id = employee.EmployeeID });
         }
 
     }

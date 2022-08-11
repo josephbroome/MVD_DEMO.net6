@@ -8,5 +8,7 @@ namespace MVD_DEMO.net6
 
         public Product GetProduct(int id);
 
+        public void UpdateProduct (Product product);
+
     }
 }
