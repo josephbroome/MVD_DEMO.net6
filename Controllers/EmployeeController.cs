@@ -41,5 +41,11 @@ namespace MVD_DEMO.net6.Controllers
             return RedirectToAction("ViewEmployee", new { id = employee.EmployeeID });
         }
 
+        public IActionResult InsertEmployeeToDatabase(Employee employeeToInsert)
+        {
+            _repo.InsertEmployee(employeeToInsert);
+            return RedirectToAction("Index");
+        }
+
     }
 }

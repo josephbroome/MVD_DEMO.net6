@@ -1,0 +1,32 @@
+﻿@model Employee
+
+<h2>Add a New Employee</h2>
+
+@using (Html.BeginForm("InsertEmployeeToDatabase", "Employee", "Post"))
+{
+    <input asp-for="EmployeeID" type="hidden" value="" />
+
+    <label asp-for="FirstName" class="control-label">Name</label>
+    <input type="text" name="FirstName" class="form-control" value="" />
+
+    <label asp-for="MiddleInitial" class="control-label">Price</label>
+    <input type="text" name="MiddleInitial" class="form-control" />
+
+    <label asp-for="LastName" class="control-label">Onsale</label>
+    <input type="text" name="LastName" class="form-control" />
+
+    <label asp-for="EmailAddress" class="control-label">StockLevel</label>
+    <input type="number" name="EmailAddress" class="form-control" />
+
+    <label asp-for="PhoneNumber" class="control-label">StockLevel</label>
+    <input type="number" name="PhoneNumber" class="form-control" />
+
+    <label asp-for="Title" class="control-label">StockLevel</label>
+    <input type="number" name="Title" class="form-control" />
+   
+    <label asp-for="DateOfBirth" class="control-label">StockLevel</label>
+    <input type="datetime" name="DateOfBirth" class="form-control" />
+
+
+    <input type="submit" value="Add Employee" class="btn btn-primary" />
+}

@@ -11,6 +11,8 @@ namespace MVD_DEMO.net6
 
         public void UpdateEmployee(Employee employee);
 
+        public void InsertEmployee(Employee employeeToInsert);
+
 
     }
 
